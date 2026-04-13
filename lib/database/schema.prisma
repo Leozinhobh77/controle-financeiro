@@ -1,0 +1,77 @@
+// ─── FinanceFlow — Schema Prisma (SQLite local) ───────────────────────────────
+// Para migrar para nuvem no futuro, só mude:
+//   provider = "postgresql"   (Supabase, Neon, Railway, etc.)
+//   url      = env("DATABASE_URL")
+// O resto do código continua IGUAL.
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../banco/financeflow.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ─── Contas financeiras ────────────────────────────────────────────────────────
+model Conta {
+  id                   String   @id @default(cuid())
+  descricao            String
+  valor                Float
+  dataVencimento       String?
+  dataPagamento        String?
+  categoria            String   @default("outros")
+  observacoes          String?  @default("")
+  status               String   @default("pendente")
+
+  // Recorrência
+  recorrente           Boolean  @default(false)
+  intervaloRecorrencia String?
+  recorrenciaAtiva     Boolean  @default(false)
+
+  // Parcelamento
+  parcelado            Boolean  @default(false)
+  totalParcelas        Int?
+  parcelaAtual         Int?
+  grupoParcelamento    String?
+
+  // Auditoria
+  criadoEm            DateTime @default(now())
+  atualizadoEm        DateTime @updatedAt
+
+  @@index([status])
+  @@index([dataVencimento])
+  @@index([grupoParcelamento])
+}
+
+// ─── Categorias ────────────────────────────────────────────────────────────────
+model Categoria {
+  id    String @id
+  nome  String
+  cor   String
+  icone String
+  ordem Int    @default(0)
+}
+
+// ─── Kanban ────────────────────────────────────────────────────────────────────
+model KanbanCard {
+  id        String   @id @default(cuid())
+  coluna    String   // todo | doing | done
+  titulo    String
+  descricao String?
+  prioridade String? // baixa | media | alta
+  cor       String?
+  ordem     Int      @default(0)
+  criadoEm  DateTime @default(now())
+
+  @@index([coluna])
+}
+
+// ─── Configurações ─────────────────────────────────────────────────────────────
+model Config {
+  id           String @id @default("main")
+  tema         String @default("dark")
+  moeda        String @default("BRL")
+  nomeUsuario  String @default("Usuário")
+  saldoInicial Float  @default(0)
+}

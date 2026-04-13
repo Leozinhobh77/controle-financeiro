@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FinanceFlow — Controle financeiro pessoal completo e offline">
+  <title>FinanceFlow — Controle Financeiro</title>
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366F1'/%3E%3Ctext y='22' x='6' font-size='20'%3E💰%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ─── LOADING SCREEN ─────────────────────────────────────────────────────── -->
+<div id="loading-screen" style="
+  position:fixed;inset:0;background:#080D1A;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:16px;z-index:9999;
+">
+  <div style="
+    width:52px;height:52px;border-radius:14px;
+    background:linear-gradient(135deg,#6366F1,#4F46E5);
+    display:grid;place-items:center;font-size:28px;
+    box-shadow:0 8px 24px rgba(99,102,241,0.4);
+  ">💰</div>
+  <div style="font-family:-apple-system,sans-serif;color:#F0F4FF;font-size:1.1rem;font-weight:700;letter-spacing:-0.3px;">FinanceFlow</div>
+  <div style="display:flex;gap:6px;margin-top:4px;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#6366F1;animation:dot 1.2s 0s infinite;"></span>
+    <span style="width:8px;height:8px;border-radius:50%;background:#6366F1;animation:dot 1.2s 0.2s infinite;"></span>
+    <span style="width:8px;height:8px;border-radius:50%;background:#6366F1;animation:dot 1.2s 0.4s infinite;"></span>
+  </div>
+  <div id="loading-msg" style="font-family:-apple-system,sans-serif;color:#4A5A80;font-size:0.8rem;">Conectando ao banco de dados...</div>
+  <style>
+    @keyframes dot { 0%,80%,100%{opacity:0.2;transform:scale(0.8)} 40%{opacity:1;transform:scale(1)} }
+  </style>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     LAYOUT
+════════════════════════════════════════════════════════════════════ -->
+<div class="app-layout">
+
+  <!-- ─── SIDEBAR ─────────────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+      <a class="logo" href="#">
+        <div class="logo-icon">F</div>
+        <span class="logo-text">FinanceFlow</span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <a class="nav-item active" data-page="dashboard" href="#">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+        </svg>
+        Dashboard
+      </a>
+
+      <a class="nav-item" data-page="contas" href="#">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+        </svg>
+        Contas
+      </a>
+
+      <a class="nav-item" data-page="relatorios" href="#">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+        </svg>
+        Relatórios
+      </a>
+
+      <a class="nav-item" data-page="kanban" href="#">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+        </svg>
+        Kanban
+      </a>
+
+      <a class="nav-item" data-page="categorias" href="#">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+        </svg>
+        Categorias
+      </a>
+
+      <a class="nav-item" data-page="configuracoes" href="#">
+        <svg class="nav-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        Configurações
+      </a>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-card">
+        <div class="user-avatar" id="user-avatar">U</div>
+        <span class="user-name" id="user-name">Usuário</span>
+      </div>
+    </div>
+
+  </aside>
+  <!-- ─── FIM SIDEBAR ───────────────────────────────────────────────── -->
+
+  <!-- ─── MAIN ─────────────────────────────────────────────────────── -->
+  <div class="main-content" id="main-content">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button id="sidebar-toggle" aria-label="Menu">
+        <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+      <span class="topbar-title" id="topbar-title">Dashboard</span>
+      <div class="topbar-spacer"></div>
+    </header>
+
+    <!-- ─── PÁGINAS ──────────────────────────────────────────────── -->
+    <div id="page-dashboard"     class="page active"></div>
+    <div id="page-contas"        class="page"></div>
+    <div id="page-relatorios"    class="page"></div>
+    <div id="page-kanban"        class="page"></div>
+    <div id="page-categorias"    class="page"></div>
+    <div id="page-configuracoes" class="page"></div>
+
+  </div>
+  <!-- ─── FIM MAIN ─────────────────────────────────────────────────── -->
+
+</div>
+<!-- ═══════════════════════════════════════════════════════════════════
+     FIM LAYOUT
+════════════════════════════════════════════════════════════════════ -->
+
+
+<!-- ─── MODAL ─────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <h2 class="modal-title" id="modal-title">Título</h2>
+      <button class="modal-close" id="modal-close-btn" aria-label="Fechar" onclick="UI.fecharModal(null)">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-footer" id="modal-footer"></div>
+  </div>
+</div>
+
+
+<!-- ─── FAB ───────────────────────────────────────────────────────── -->
+<div id="fab-container">
+  <button id="fab" aria-label="Adicionar">
+    <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/>
+    </svg>
+  </button>
+  <div id="fab-menu">
+    <button class="fab-item" id="fab-nova-conta">
+      <span class="fab-item-icon">📋</span>
+      Nova Conta
+    </button>
+    <button class="fab-item" id="fab-parcelamento">
+      <span class="fab-item-icon">💳</span>
+      Parcelamento
+    </button>
+    <button class="fab-item" id="fab-kanban">
+      <span class="fab-item-icon">📌</span>
+      Nova Nota
+    </button>
+  </div>
+</div>
+
+
+<!-- ─── SCRIPTS (ordem importa) ────────────────────────────────────── -->
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/financeiro.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/kanban.js"></script>
+<script src="js/app.js"></script>
+
+<!-- ─── INIT: aguarda banco antes de iniciar ───────────────────────── -->
+<script>
+(async () => {
+  const loading = document.getElementById('loading-screen');
+  const msg     = document.getElementById('loading-msg');
+
+  try {
+    msg.textContent = 'Carregando dados...';
+    const ok = await Storage.init();
+
+    if (!ok) {
+      msg.textContent = '⚠ API offline — verifique se o servidor está rodando';
+      msg.style.color = '#F59E0B';
+      // Aguarda 2s para o usuário ver o aviso, depois inicia com cache vazio
+      await new Promise(r => setTimeout(r, 2000));
+    }
+
+    // Esconde loading e inicia o app
+    loading.style.transition = 'opacity 0.3s';
+    loading.style.opacity = '0';
+    setTimeout(() => loading.remove(), 300);
+
+    App.init();
+
+  } catch (e) {
+    msg.textContent = '❌ Erro ao iniciar: ' + e.message;
+    msg.style.color = '#EF4444';
+    console.error('[Init]', e);
+  }
+})();
+</script>
+
+</body>
+</html>

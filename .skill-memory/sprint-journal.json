@@ -1,0 +1,17 @@
+{
+  "sprints": [
+    {
+      "numero": 1,
+      "nome": "Reestruturação Titan",
+      "data_inicio": "2026-04-13T17:00:00Z",
+      "status": "em_progresso",
+      "tasks": [
+        { "id": 1, "desc": "Criação da estrutura de pastas Titan", "status": "concluido" },
+        { "id": 2, "desc": "Inicialização do working-memory.json", "status": "concluido" },
+        { "id": 3, "desc": "Transformação de CLAUDE.md em AI_CONTEXT.md", "status": "pendente" },
+        { "id": 4, "desc": "Reorganização de pastas (lib, docs, prisma)", "status": "pendente" },
+        { "id": 5, "desc": "Limpeza de legado (forge/)", "status": "pendente" }
+      ]
+    }
+  ]
+}
