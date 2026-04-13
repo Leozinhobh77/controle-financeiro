@@ -1,50 +1,52 @@
 {
-  "__metadata": {
-    "schema_version": "4.0",
-    "forge_version": "4.0",
-    "app_name": "Controle Financeiro",
-    "app_path": "c:\\Users\\Usuário\\Desktop\\Curso Claude Code-Jhonatan de Souza\\controle-financeiro",
-    "created_at": "2026-04-13T17:00:00Z",
-    "updated_at": "2026-04-13T17:00:00Z"
-  },
-  "__essenciais": {
-    "objetivo_do_app": "Sistema de controle financeiro pessoal v2 com Next.js 16 e Prisma.",
-    "stack_principal": "Next.js 16, React 19, Prisma, Tailwind CSS v4, Vitest",
-    "fase_atual": "skill-documentador",
-    "sentinela_ativa": false,
-    "sentinela_janela": "Abrir /skill-sentinela em segundo terminal"
-  },
-  "__foco_atual": {
-    "sprint_numero": 1,
-    "sprint_nome": "Reestruturação Titan",
-    "task_total": 5,
-    "task_atual": 2,
-    "status": "em_progresso",
-    "file_lock_ativo": false,
-    "aguardando_auditoria": false
-  },
-  "__ponteiros": {
-    "sprint_journal": ".skill-memory/sprint-journal.json",
-    "sentinela_channel": ".skill-memory/sentinela-channel.json",
-    "sentinela_log": ".skill-memory/sentinela-log.json",
-    "bug_dna": "../../.forge/forge-knowledge-base.json",
-    "backups_dir": ".skill-memory/backups/"
-  },
-  "__progresso": {
-    "sprints_total": 1,
-    "tasks_total": 5,
-    "tasks_concluidas": 1,
-    "percentual": 20,
-    "health_score": 50
-  },
-  "__ideias_futuras": [],
-  "__historico_resumido": [
-    {
-      "evento": "Projeto reestruturado para Agente Forge v4.0 Titan",
-      "skill": "skill-inicializador",
-      "llm": "Gemini 1.5 Flash",
-      "timestamp": "2026-04-13T17:00:00Z",
-      "resultado": "sucesso"
-    }
-  ]
+    "__metadata":  {
+                       "schema_version":  "4.0",
+                       "forge_version":  "4.0",
+                       "app_name":  "Controle Financeiro",
+                       "app_path":  "c:\\Users\\Usuário\\Desktop\\Curso Claude Code-Jhonatan de Souza\\controle-financeiro",
+                       "created_at":  "2026-04-13T17:00:00Z",
+                       "updated_at":  "2026-04-13T17:00:00Z"
+                   },
+    "__essenciais":  {
+                         "objetivo_do_app":  "Sistema de controle financeiro pessoal v2 com Next.js 16 e Prisma.",
+                         "stack_principal":  "Next.js 16, React 19, Prisma, Tailwind CSS v4, Vitest",
+                         "fase_atual":  "skill-planner",
+                         "sentinela_ativa":  false,
+                         "sentinela_janela":  "Abrir /skill-sentinela em segundo terminal"
+                     },
+    "__foco_atual":  {
+                         "sprint_numero":  1,
+                         "sprint_nome":  "Reestruturação Titan",
+                         "task_total":  5,
+                         "task_atual":  2,
+                         "status":  "em_progresso",
+                         "file_lock_ativo":  false,
+                         "aguardando_auditoria":  false
+                     },
+    "__ponteiros":  {
+                        "sprint_journal":  ".skill-memory/sprint-journal.json",
+                        "sentinela_channel":  ".skill-memory/sentinela-channel.json",
+                        "sentinela_log":  ".skill-memory/sentinela-log.json",
+                        "bug_dna":  "../../.forge/forge-knowledge-base.json",
+                        "backups_dir":  ".skill-memory/backups/"
+                    },
+    "__progresso":  {
+                        "sprints_total":  1,
+                        "tasks_total":  5,
+                        "tasks_concluidas":  2,
+                        "percentual":  40,
+                        "health_score":  50
+                    },
+    "__ideias_futuras":  [
+
+                         ],
+    "__historico_resumido":  [
+                                 {
+                                     "evento":  "Projeto reestruturado para Agente Forge v4.0 Titan",
+                                     "skill":  "skill-inicializador",
+                                     "llm":  "Gemini 1.5 Flash",
+                                     "timestamp":  "2026-04-13T17:00:00Z",
+                                     "resultado":  "sucesso"
+                                 }
+                             ]
 }
