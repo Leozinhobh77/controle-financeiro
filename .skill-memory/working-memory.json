@@ -10,18 +10,18 @@
     "__essenciais":  {
                          "objetivo_do_app":  "Sistema de controle financeiro pessoal v2 com Next.js 16 e Prisma.",
                          "stack_principal":  "Next.js 16, React 19, Prisma, Tailwind CSS v4, Vitest",
-                         "fase_atual":  "skill-planner",
+                         "fase_atual":  "skill-construtor",
                          "sentinela_ativa":  false,
                          "sentinela_janela":  "Abrir /skill-sentinela em segundo terminal"
                      },
     "__foco_atual":  {
-                         "sprint_numero":  1,
-                         "sprint_nome":  "Reestruturação Titan",
-                         "task_total":  5,
-                         "task_atual":  2,
-                         "status":  "em_progresso",
-                         "file_lock_ativo":  false,
-                         "aguardando_auditoria":  false
+                         "sprint_numero":  3,
+                         "task_atual":  "3.1",
+                         "arquivo_em_edicao":  "app/globals.css",
+                         "file_lock_ativo":  true,
+                         "status":  "em_construcao",
+                         "aguardando_auditoria":  false,
+                         "progresso_task_3_1":  "Iniciando Setup do Tema Obsidian & Gold"
                      },
     "__ponteiros":  {
                         "sprint_journal":  ".skill-memory/sprint-journal.json",
@@ -31,11 +31,11 @@
                         "backups_dir":  ".skill-memory/backups/"
                     },
     "__progresso":  {
-                        "sprints_total":  1,
-                        "tasks_total":  5,
-                        "tasks_concluidas":  2,
-                        "percentual":  40,
-                        "health_score":  50
+                        "sprints_total":  2,
+                        "tasks_total":  8,
+                        "tasks_concluidas":  5,
+                        "percentual":  62,
+                        "health_score":  65
                     },
     "__ideias_futuras":  [
 
@@ -46,6 +46,34 @@
                                      "skill":  "skill-inicializador",
                                      "llm":  "Gemini 1.5 Flash",
                                      "timestamp":  "2026-04-13T17:00:00Z",
+                                     "resultado":  "sucesso"
+                                 },
+                                 {
+                                     "evento":  "Finalização de Governança (PRD + Constitution) e Sincronização Metodológica",
+                                     "skill":  "skill-consultor",
+                                     "llm":  "Gemini 3 Flash",
+                                     "timestamp":  "2026-04-13T18:20:00Z",
+                                     "resultado":  "sucesso"
+                                 },
+                                 {
+                                     "evento":  "Planejamento Tático Sprint 2 (Motor) Finalizado",
+                                     "skill":  "skill-planner",
+                                     "llm":  "Gemini 3 Flash",
+                                     "timestamp":  "2026-04-13T18:25:00Z",
+                                     "resultado":  "sucesso"
+                                 },
+                                 {
+                                     "evento":  "Blueprint Técnico (SPEC.md) Gerado com melhoria de Auditoria de Transações",
+                                     "skill":  "skill-documentador",
+                                     "llm":  "Gemini 3 Flash",
+                                     "timestamp":  "2026-04-13T18:30:00Z",
+                                     "resultado":  "sucesso"
+                                 },
+                                 {
+                                     "evento":  "Finalização da Sprint 2 e Aprovação de Início da Sprint 3 (Dashboard e Estética)",
+                                     "skill":  "skill-construtor",
+                                     "llm":  "Gemini 3.1",
+                                     "timestamp":  "2026-04-13T18:55:00Z",
                                      "resultado":  "sucesso"
                                  }
                              ]

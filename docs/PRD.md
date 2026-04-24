@@ -1,8 +1,10 @@
 # Product Requirements Document (PRD) — Controle Financeiro v2
+**Versão:** 4.0 | **Status:** Titan Synchronized
 
 ## 1. Business Summary
-**Nome:** Controle Financeiro v2 (FinForge Edition)
-**Posicionamento:** Um ecossistema de gestão financeira pessoal de alta performance. Uma Single Page Application (SPA) que combina a simplicidade de uso mobile-first com a potência analítica de um dashboard premium.
+**Nome:** Controle Financeiro v2 (Titan Force Edition)
+**Posicionamento:** Um ecossistema de gestão financeira pessoal de alta performance, migrado para a **Arquitetura Titan v4.0**. Uma Single Page Application (SPA) que combina a simplicidade de uso mobile-first com a potência analítica de um dashboard premium.
+**Contexto de Reestruturação:** Este projeto está sendo sincronizado com a metodologia Agente Forge para garantir máxima auditabilidade, resiliência de memória e performance superior em Next.js 16.
 **Objetivo do Usuário:** Controlar gastos, gerenciar parcelamentos e visualizar a saúde financeira em uma interface impecável ("Obsidian & Gold"), com processamento local e privacidade total.
 
 ## 2. Público-Alvo e Dores

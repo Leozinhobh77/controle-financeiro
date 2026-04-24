@@ -1,21 +1,29 @@
-# Constitution — Controle Financeiro v2
+# 📜 CONSTITUTION — Controle Financeiro v2
+**Método Agente Forge v4.0 Titan**
 
-Este documento estabelece as leis fundamentais e inquebráveis que regem o desenvolvimento deste projeto.
-
-## ⚖️ Leis do Projeto (Leis de Negócio)
-
-1. **Lei da Privacidade:** Nanhum dado financeiro sensível deve ser enviado a servidores externos sem criptografia ponta-a-ponta e consentimento explícito. O padrão é armazenamento local.
-2. **Lei do Design:** A interface deve seguir estritamente a estética "Obsidian & Gold". Minimalismo e luxo são prioritários.
-3. **Lei da Integridade:** Números financeiros nunca devem ser arredondados de forma imprecisa. O uso de bibliotecas de precisão decimal é mandatório onde necessário.
-4. **Lei da Responsividade:** O app deve ser perfeito no mobile (iPhone/Android via browser) antes de ser otimizado para desktop.
-
-## 🛡️ Leis de Engenharia (Forge v4.0 Titan)
-
-5. **Lei da Memória:** Nenhuma alteração significativa deve ser feita sem antes ler o `working-memory.json` e atualizar o `sprint-journal.json`.
-6. **Lei da Documentação (SDD):** Funcionalidades novas requerem atualização imediata no `AI_CONTEXT.md` e na estrutura `docs/`.
-7. **Lei da Auditoria (Sentinela):** O `/skill-sentinela` deve estar ativo em um segundo terminal durante qualquer fase de construção (`/skill-construtor`).
-8. **Lei do Git Atômico:** Commits devem ser puramente funcionais e seguir o padrão de Conventional Commits.
-9. **Lei da Resiliência:** Backups automatizados da memória do sistema devem ser gerados em `.skill-memory/backups/` após cada ciclo de skill.
+Esta constituição define as leis fundamentais e inquebráveis que regem o desenvolvimento, a governança e a integridade deste ecossistema digital. Qualquer alteração nestas leis exige uma sessão formal de revisão arquitetural.
 
 ---
-*Assinado: Comitê de Governança Forge*
+
+## ⚖️ LEIS DO PROJETO (Business & Logic)
+
+1.  **Privacidade Absoluta (Local-First):** Toda a persistência de dados sensíveis deve ser realizada localmente via SQLite e Prisma. Nenhuma credencial ou dado financeiro real deve trafegar para nuvens externas sem criptografia fim-a-fim opcional.
+2.  **Aesthetics of Excellence (Obsidian & Gold):** A interface deve seguir rigorosamente o design system premium estabelecido (#0F0F0F, #F59E0B), prezando por micro-animações, sombras profundas e tipografia Georgia/Segoe UI.
+3.  **Integridade do Fluxo:** A lógica de parcelamento e recorrência é o núcleo de inteligência do app. Nenhuma refatoração pode comprometer a precisão matemática dos cálculos de saldo futuro.
+4.  **Performance Titan:** O app deve ser otimizado para carga instantânea e uso mobile-first, garantindo que o fluxo de cadastro de contas nunca exceda 3 interações.
+5.  **Tecnologia de Ponta:** O projeto é forjado em **Next.js 16 + React 19**. Novas dependências devem ser validadas contra conflitos de peer-dependencies (Bug-DNA mapeado).
+
+---
+
+## 🛡️ LEIS INQUEBRÁVEIS AGENTE FORGE (v4.0 Protocol)
+
+1.  **A Lei da Dualidade (Terminal 2):** Nenhuma linha de código deve ser escrita na `/skill-construtor` sem que a **Sentinela** esteja ativa e monitorando em um segundo terminal dedicado.
+2.  **Inviolabilidade da Memória:** O diretório `.skill-memory/` é a alma do projeto. O `working-memory.json` deve ser consultado no início de cada turno e atualizado ao final de cada tarefa.
+3.  **Pipeline SDD (Caminho Crítico):** O desenvolvimento segue obrigatoriamente a sequência: *Consultor -> Planner -> Documentador -> Construtor*. O pulo de fases é considerado uma violação de governança.
+4.  **Snapshot Atômico:** Cada sub-tarefa concluída deve ser seguida de um registro no `sprint-journal.json` e um commit/snapshot git para garantir a resiliência contra estados de alucinação ou erros críticos.
+5.  **Auditoria Constante:** A IA deve atuar como Auditora Sênior, validando os requisitos contra o PRD e a SPEC técnica antes de considerar qualquer sprint concluída.
+
+---
+
+*Assinado em 13 de abril de 2026*
+**Conselho de Diretores Forge & Solutions Architect**

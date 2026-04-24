@@ -6,7 +6,7 @@
 
 datasource db {
   provider = "sqlite"
-  url      = "file:../banco/financeflow.db"
+  url      = "file:./financeflow.db"
 }
 
 generator client {
@@ -74,4 +74,19 @@ model Config {
   moeda        String @default("BRL")
   nomeUsuario  String @default("Usuário")
   saldoInicial Float  @default(0)
+}
+
+// ─── Histórico de Transações (Melhoria Titan) ──────────────────────────────────
+model Transacao {
+  id        String   @id @default(cuid())
+  contaId   String?  // Relacional opcional
+  tipo      String   // entrada | saida
+  valor     Float
+  data      DateTime @default(now())
+  categoria String?
+  metodo    String?  // pix | dinheiro | cartao
+  criadoEm  DateTime @default(now())
+
+  @@index([tipo])
+  @@index([data])
 }
