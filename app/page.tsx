@@ -1,4 +1,4 @@
-import prisma from '@/lib/database/client';
+import { mockContas, mockConfig } from '@/mockData';
 import { MetricCard } from './components/ui/MetricCard';
 import { CashflowChart } from './components/ui/CashflowChart';
 import { ContaList } from './components/ui/ContaList';
@@ -21,8 +21,8 @@ import Link from 'next/link';
 export const revalidate = 0;
 
 export default async function Dashboard() {
-  const todasContas = await prisma.conta.findMany({ orderBy: { dataVencimento: 'asc' } });
-  const config = await prisma.config.findFirst({ where: { id: 'main' } });
+  const todasContas = mockContas.sort((a, b) => new Date(a.dataVencimento || 0).getTime() - new Date(b.dataVencimento || 0).getTime());
+  const config = mockConfig;
 
   const saldoInicial = config?.saldoInicial ?? 0;
   const nomeUsuario = config?.nomeUsuario ?? 'Usuário';
