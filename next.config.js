@@ -2,8 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
   turbopack: {},
-  output: 'export',
-  basePath: '/controle-financeiro',
   experimental: {
     optimizePackageImports: ['recharts'],
   },
