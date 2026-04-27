@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/database/client';
-import { ContaCreateSchema, ContaUpdateSchema } from '@/lib/schemas/conta';
+import { ContaCreateSchema } from '@/lib/schemas/conta';
 import { ZodError } from 'zod';
 
 /**
  * GET /api/contas
  * Retorna todas as contas, ordenadas por dataVencimento
  */
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     const contas = await prisma.conta.findMany({
       orderBy: { dataVencimento: 'asc' },
