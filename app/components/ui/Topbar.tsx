@@ -1,7 +1,6 @@
 'use client';
 
 import { Bell, Search, User } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export function Topbar() {
   return (

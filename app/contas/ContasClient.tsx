@@ -14,7 +14,7 @@ import {
   Calendar,
   Tag,
 } from 'lucide-react';
-import { format, isPast, isToday } from 'date-fns';
+import { format, isToday } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { formatCurrency, categoriaCor, categoriaLabel, exportarCSV } from '@/lib/utils/financeiro';
 import { ContaDialog } from './ContaDialog';
@@ -47,7 +47,7 @@ export function ContasClient({ contas }: Props) {
   const [filtroCategoria, setFiltroCategoria] = useState('todas');
   const [dialogAberto, setDialogAberto] = useState(false);
   const [contaEditando, setContaEditando] = useState<Conta | null>(null);
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   const categorias = Array.from(new Set(contas.map((c) => c.categoria)));
 
