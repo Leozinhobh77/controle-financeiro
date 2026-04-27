@@ -26,7 +26,7 @@ const CustomTooltip = ({ active, payload }: any) => {
   );
 };
 
-export function MetasClient({ gastos, gastosPagos, totalGeral }: Props) {
+export function MetasClient({ gastos, gastosPagos }: Props) {
   const todosCats = Array.from(
     new Set([...gastos.map((g) => g.cat), ...gastosPagos.map((g) => g.cat)])
   );
@@ -104,7 +104,7 @@ export function MetasClient({ gastos, gastosPagos, totalGeral }: Props) {
         <p className="text-text-muted text-sm mb-4">Quanto já foi pago em cada categoria</p>
 
         <div className="flex flex-col gap-4">
-          {dadosCombinados.map(({ cat, pendente, pago, total }) => {
+          {dadosCombinados.map(({ cat, pago, total }) => {
             const pct = total > 0 ? (pago / total) * 100 : 0;
             return (
               <div key={cat}>
